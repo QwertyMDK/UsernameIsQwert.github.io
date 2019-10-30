@@ -1,0 +1,292 @@
+@import "./variables.scss";
+@import "./mixins.scss";
+
+* {
+    transition: 1s;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    // color: white;
+}
+
+header {
+
+    // background: url(./../img/headPhones1920x1080.jpg) no-repeat center top / cover;
+}
+
+.container {
+    // border: dashed black 1px;
+    margin: 0 auto;
+    max-width: 900px;
+
+    nav {
+        @include grid(row);
+        padding: 0 30px;
+        margin-bottom: -23px;
+
+        .topmenu {
+            display: flex;
+            justify-content: space-between;
+            padding: 0;
+
+            ul {
+                position: relative;
+
+            }
+            > li {
+                letter-spacing: 4px;
+                font-size: 1.4em;
+                color: black;
+                box-sizing: content-box;
+
+                a {
+                    color: $navColor;
+                    transition: 0.5s;
+
+                    &:hover {
+                        transition: border-bottom 1s, color 0.2s;
+                        // text-decoration: underline;
+                        border-bottom: solid 1px #d96464;
+                        color: rgba($color: #d96464, $alpha: 0.6)
+                    }
+                } 
+            }
+
+            
+        }
+    }
+}
+
+.down:hover > ul, .submenu:hover {
+    display: block;
+    color: #d96464;
+
+    background-color: rgba($color: #457dd1, $alpha: 0.8);
+
+}
+
+.submenu {
+    position: absolute;
+    left: 0;
+    display: none;
+    text-align: start;
+    width: 200px;
+    padding: 10px;
+    padding-left: 2px;
+    border-radius: 0 0 5px 3px;
+}
+
+.logo {
+    align-items: center;
+    height: 76px;
+    margin-bottom: 15px;
+    @include grid(column);
+    text-align: center;
+    font-size: 2em;
+    cursor: pointer;
+    // color: white;
+
+
+    h1 {
+        margin: 0;
+    }
+
+
+    span {
+        font-size: 1.2em;
+        font-weight: bold;
+
+        color: #457dd1;
+    }
+}
+
+.search {
+    border: solid 2px rgba($color: #000000, $alpha: 0.6);
+    box-shadow: 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    padding: 15px;
+    border-radius: 10px;
+
+    &:focus {
+        outline: none;
+        box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+    }
+}
+
+
+.popGrid {
+    width: 100%;
+
+}
+
+#popularGrid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 4px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+
+    >div {
+        margin-bottom: 10px;
+        height: 300px;
+
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+h2 {
+    font-size: 1.4em;
+    margin-left: 20px;
+}
+
+.readMore {
+    color: orange;
+    font-style: italic;
+    cursor: pointer;
+}
+
+footer .container {
+    @include grid(column);
+    padding: 20px;
+    background: rgba($color: #000000, $alpha: 0.9);
+    font-size: 1.2em;
+    color: white;
+
+    margin-top: 50px;
+
+    .rights {
+        text-align: end;
+    }
+
+    #links {
+        font-size: 1.3em;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+
+
+}
+.mangaTop {
+    margin-top: 15px;
+}
+#mangaPage {
+    .description {
+        @include grid(column);
+        grid-template-columns: 1fr 2fr;
+        grid-gap: 30px;
+        margin-bottom: -10px;
+    }
+
+    .poster {
+        padding: 10px;
+
+        img {
+            width: 100%;
+        }
+
+        // background: rgba($color: #000000, $alpha: 0.7);
+        // text-align: center;
+    }
+
+
+
+    .info {
+        h2 {
+            margin-left: 0;
+        }
+
+        .readBtn {
+            background-color: sandybrown;
+            text-align: center;
+            padding: 5px;
+            width: 30%;
+            border-radius: 20px;
+            margin-bottom: 10px;
+        }
+
+        .readBtnSince {}
+
+    }
+
+    .about {
+        margin: 0 10px;
+    }
+}
+
+.news {
+
+    .newsBlock {
+        display: grid;
+        box-sizing: content-box;
+        grid-auto-flow: column;
+        grid-gap: 5px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+
+        > div {
+            padding: 3px;
+            border: solid 5px rgba($color: silver, $alpha: 0.5);
+
+            img {
+                width: 100%;
+            }
+
+            &:hover {
+                color: #457dd1;
+                cursor: pointer;
+                border: solid 5px rgba($color: #457dd1, $alpha: 0.5);    
+            }
+        }
+    }
+
+    .newType {
+        font-size: 1.2em;
+        margin-left: 10px;
+        text-transform: uppercase;
+    }
+
+    .newTitle {
+        text-transform: uppercase;
+        padding: 0 4px;
+    }
+
+    .newDateAuthor {
+        font-size: 0.8em;
+        color: black;
+        
+        a {
+            color: orange;
+            
+            &:hover {
+                color: #d96464;
+            }
+        }
+    }
+
+    .shareIn {
+        color: black;
+        list-style: none;
+        li {
+            float: left;
+            margin-right: 4px;
+        }
+
+    }
+}

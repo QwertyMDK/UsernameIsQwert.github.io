@@ -1,0 +1,13 @@
+@mixin grid($flow) {
+    display: grid;
+    grid-auto-flow: $flow;
+}
+
+@mixin border($bType, $bColor: black) {
+    border: $bType 1px $bColor;
+    border: none;
+}
+
+@mixin borderSet($bType, $bColor: black) {
+    border: $bType 1px $bColor;
+}
